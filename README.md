@@ -2,9 +2,9 @@
     <img alt="BeTheHero" title="#delicinha" src=".github/bethehero.svg" width="200px" />
 </h1>
 
-<h2 align="center">
+<h4 align="center">
   Be The Hero API
-</h2>
+</h4>
 
 <p align="center">
  <img src="https://img.shields.io/static/v1?label=PRs&message=welcome&color=7159c1&labelColor=000000" alt="PRs welcome!" />
