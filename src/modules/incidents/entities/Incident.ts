@@ -5,6 +5,7 @@ import {
   JoinColumn,
   ManyToOne,
   PrimaryColumn,
+  PrimaryGeneratedColumn,
 } from 'typeorm';
 import { v4 as uuidV4 } from 'uuid';
 
@@ -12,8 +13,11 @@ import { Ong } from '../../ongs/entities/Ong';
 
 @Entity('incidents')
 class Incident {
-  @PrimaryColumn()
+  @PrimaryGeneratedColumn()
   id: string;
+
+  // @PrimaryColumn()
+  // id: string;
 
   @Column()
   title: string;
@@ -34,11 +38,11 @@ class Incident {
   @CreateDateColumn()
   created_at: Date;
 
-  constructor() {
-    if (!this.id) {
-      this.id = uuidV4();
-    }
-  }
+  // constructor() {
+  //   if (!this.id) {
+  //     this.id = uuidV4();
+  //   }
+  // }
 }
 
 export { Incident };

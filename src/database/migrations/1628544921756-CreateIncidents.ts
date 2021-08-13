@@ -8,9 +8,15 @@ export class CreateIncidents1628544921756 implements MigrationInterface {
         columns: [
           {
             name: 'id',
-            type: 'uuid',
+            type: 'int',
             isPrimary: true,
+            isGenerated: true,
           },
+          // {
+          //   name: 'id',
+          //   type: 'uuid',
+          //   isPrimary: true,
+          // },
           {
             name: 'title',
             type: 'varchar',

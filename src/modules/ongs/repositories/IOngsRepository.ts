@@ -6,6 +6,7 @@ interface IOngsRepository {
   findByEmail(email: string): Promise<Ong>;
   findById(id: string): Promise<Ong>;
   list(): Promise<Ong[]>;
+  findByOngInformation(ong_id: string): Promise<Ong>;
 }
 
 export { IOngsRepository };

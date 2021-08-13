@@ -27,11 +27,13 @@ class IncidentsRespository implements IIncidentsRepository {
     await this.repository.save(incident);
   }
 
-  async list(): Promise<Incident[]> {
+  async list(page: number): Promise<Incident[]> {
     // const incidents = await this.repository.find({ relations: ['ong'] });
     const incidents = await this.repository
       .createQueryBuilder('incidents')
       .leftJoinAndSelect('incidents.ong', 'ong')
+      .limit(5)
+      .offset((page - 1) * 5)
       .select([
         'incidents.id',
         'incidents.title',
@@ -45,6 +47,7 @@ class IncidentsRespository implements IIncidentsRepository {
         'ong.city',
         'ong.uf',
       ])
+      .orderBy('incidents.id', 'ASC')
       .getMany();
 
     return incidents;

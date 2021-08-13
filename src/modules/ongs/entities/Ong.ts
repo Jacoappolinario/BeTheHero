@@ -1,5 +1,13 @@
-import { Column, CreateDateColumn, Entity, PrimaryColumn } from 'typeorm';
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  OneToMany,
+  PrimaryColumn,
+} from 'typeorm';
 import { v4 as uuidV4 } from 'uuid';
+
+import { Incident } from '../../incidents/entities/Incident';
 
 @Entity('ongs')
 class Ong {
@@ -12,7 +20,7 @@ class Ong {
   @Column()
   email: string;
 
-  @Column()
+  @Column({ select: false })
   password: string;
 
   @Column()
@@ -26,6 +34,9 @@ class Ong {
 
   @CreateDateColumn()
   created_at: Date;
+
+  @OneToMany(() => Incident, incident => incident.ong)
+  incident: Incident[];
 
   constructor() {
     if (!this.id) {
