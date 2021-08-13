@@ -55,6 +55,16 @@ class IncidentsRespository implements IIncidentsRepository {
 
     return incidents;
   }
+
+  async delete(incident_id: string): Promise<void> {
+    await this.repository.delete(incident_id);
+  }
+
+  async findById(ong_id: string): Promise<Incident> {
+    const incident = await this.repository.findOne({ ong_id });
+
+    return incident;
+  }
 }
 
 export { IncidentsRespository };
