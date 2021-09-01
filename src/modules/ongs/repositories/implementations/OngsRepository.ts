@@ -32,7 +32,6 @@ class OngsRepository implements IOngsRepository {
   }
 
   async findByEmail(email: string): Promise<Ong> {
-    // const ong = await this.repository.findOne({ email });
     const ong = await this.repository
       .createQueryBuilder('ongs')
       .where('ongs.email = :email', { email })
@@ -48,29 +47,16 @@ class OngsRepository implements IOngsRepository {
     return ong;
   }
 
-  async findByOngInformation(ong_id: string): Promise<Ong> {
-    // const ongProfile = await this.repository.findOne({ id: ong_id });
-
-    const ongProfile = await this.repository
-      .createQueryBuilder('ongs')
-      .leftJoinAndSelect('ongs.incident', 'incidents')
-      // .select([
-      //   'ongs.id',
-      //   'ongs.name',
-      //   'ongs.email',
-      //   'ongs.whatsapp',
-      //   'ongs.city',
-      //   'ongs.uf',
-      //   'incidents',
-      // ])
-      .where('ongs.id = :id', { id: ong_id })
-      .getOne();
+  async findByOngInformations(ong_id: string): Promise<Ong> {
+    const ongProfile = await this.repository.findOne({
+      relations: ['incident'],
+      where: { id: ong_id },
+    });
 
     return ongProfile;
   }
 
   async list(): Promise<Ong[]> {
-    // const ongs = await this.repository.find();
     const ongs = await this.repository
       .createQueryBuilder('ongs')
       .select([

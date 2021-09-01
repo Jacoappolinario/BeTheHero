@@ -6,7 +6,7 @@ import { IIncidentsRepository } from '../../repositories/IIncidentsRepository';
 @injectable()
 class CreateIncidentUseCase {
   constructor(
-    @inject('IncidentsRespository')
+    @inject('IncidentsRepository')
     private incidentsRepository: IIncidentsRepository,
   ) {}
 

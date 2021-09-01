@@ -10,7 +10,7 @@ interface IResquest {
 @injectable()
 class ListIncidentsUseCase {
   constructor(
-    @inject('IncidentsRespository')
+    @inject('IncidentsRepository')
     private incidentsRepository: IIncidentsRepository,
   ) {}
 

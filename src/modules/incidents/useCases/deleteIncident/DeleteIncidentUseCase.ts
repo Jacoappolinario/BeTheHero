@@ -11,12 +11,12 @@ interface IRequest {
 @injectable()
 class DeleteIncidentUseCase {
   constructor(
-    @inject('IncidentsRespository')
+    @inject('IncidentsRepository')
     private incidentsRepository: IIncidentsRepository,
   ) {}
 
   async execute({ ong_id, incident_id }: IRequest): Promise<void> {
-    const incident = await this.incidentsRepository.findById(ong_id);
+    const incident = await this.incidentsRepository.findById(incident_id);
 
     if (incident.ong_id !== ong_id) {
       throw new AppError('Operation not permitted.', 401);

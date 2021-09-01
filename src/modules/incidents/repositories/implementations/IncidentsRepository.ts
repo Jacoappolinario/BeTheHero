@@ -4,7 +4,7 @@ import { ICreateIncidentDTO } from '../../dtos/ICreateIncidentDTO';
 import { Incident } from '../../entities/Incident';
 import { IIncidentsRepository } from '../IIncidentsRepository';
 
-class IncidentsRespository implements IIncidentsRepository {
+class IncidentsRepository implements IIncidentsRepository {
   private repository: Repository<Incident>;
 
   constructor() {
@@ -28,7 +28,6 @@ class IncidentsRespository implements IIncidentsRepository {
   }
 
   async list(page: number): Promise<Incident[]> {
-    // const incidents = await this.repository.find({ relations: ['ong'] });
     const incidents = await this.repository
       .createQueryBuilder('incidents')
       .leftJoinAndSelect('incidents.ong', 'ong')
@@ -53,21 +52,15 @@ class IncidentsRespository implements IIncidentsRepository {
     return incidents;
   }
 
-  async ListMyIncidents(ong_id: string): Promise<Incident[]> {
-    const incidents = await this.repository.find({ ong_id });
-
-    return incidents;
-  }
-
   async delete(incident_id: string): Promise<void> {
     await this.repository.delete(incident_id);
   }
 
-  async findById(ong_id: string): Promise<Incident> {
-    const incident = await this.repository.findOne({ ong_id });
+  async findById(incident_id: string): Promise<Incident> {
+    const incident = await this.repository.findOne(incident_id);
 
     return incident;
   }
 }
 
-export { IncidentsRespository };
+export { IncidentsRepository };

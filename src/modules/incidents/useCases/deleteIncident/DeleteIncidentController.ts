@@ -5,12 +5,12 @@ import { DeleteIncidentUseCase } from './DeleteIncidentUseCase';
 
 class DeleteIncidentController {
   async handle(request: Request, response: Response): Promise<Response> {
-    const ong_id = request.ong.id;
+    const { id } = request.ong;
     const incident_id = request.params.id;
 
     const deleteIncidentUseCase = container.resolve(DeleteIncidentUseCase);
 
-    await deleteIncidentUseCase.execute({ ong_id, incident_id });
+    await deleteIncidentUseCase.execute({ ong_id: id, incident_id });
 
     return response.status(200).send();
   }

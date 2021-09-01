@@ -15,7 +15,7 @@ class ProfileOngUseCase {
   ) {}
 
   async execute({ ong_id }: IRequest): Promise<Ong> {
-    const ongProfile = this.ongsRepository.findByOngInformation(ong_id);
+    const ongProfile = this.ongsRepository.findByOngInformations(ong_id);
 
     return ongProfile;
   }
