@@ -3,7 +3,7 @@ import { Incident } from '../entities/Incident';
 
 interface IIncidentsRepository {
   create(data: ICreateIncidentDTO): Promise<void>;
-  list(page: number): Promise<Incident[]>;
+  list(page?: number): Promise<Incident[]>;
   delete(incident_id: string): Promise<void>;
   findById(ong_id: string): Promise<Incident>;
 }

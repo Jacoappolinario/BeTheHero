@@ -18,6 +18,10 @@ class DeleteIncidentUseCase {
   async execute({ ong_id, incident_id }: IRequest): Promise<void> {
     const incident = await this.incidentsRepository.findById(incident_id);
 
+    if (!incident) {
+      throw new AppError('Incident not found', 404);
+    }
+
     if (incident.ong_id !== ong_id) {
       throw new AppError('Operation not permitted.', 401);
     }

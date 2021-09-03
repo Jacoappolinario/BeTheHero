@@ -1,5 +1,6 @@
 import { inject, injectable } from 'tsyringe';
 
+import { AppError } from '../../../../errors/AppError';
 import { ICreateIncidentDTO } from '../../dtos/ICreateIncidentDTO';
 import { IIncidentsRepository } from '../../repositories/IIncidentsRepository';
 
@@ -16,6 +17,10 @@ class CreateIncidentUseCase {
     value,
     ong_id,
   }: ICreateIncidentDTO): Promise<void> {
+    if (value <= 0) {
+      throw new AppError('Error, invalid value.');
+    }
+
     await this.incidentsRepository.create({
       title,
       description,
