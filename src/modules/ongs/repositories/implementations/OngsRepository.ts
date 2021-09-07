@@ -1,5 +1,6 @@
 import { getRepository, Repository } from 'typeorm';
 
+import { Incident } from '../../../incidents/entities/Incident';
 import { ICreateOngDTO } from '../../dtos/ICreateOngDTO';
 import { Ong } from '../../entities/Ong';
 import { IOngsRepository } from '../IOngsRepository';
@@ -47,13 +48,13 @@ class OngsRepository implements IOngsRepository {
     return ong;
   }
 
-  async findByOngInformations(ong_id: string): Promise<Ong> {
-    const ongProfile = await this.repository.findOne({
+  async findByIncidents(id: string): Promise<Incident[]> {
+    const ong = await this.repository.findOne({
       relations: ['incident'],
-      where: { id: ong_id },
+      where: { id },
     });
 
-    return ongProfile;
+    return ong.incident;
   }
 
   async list(): Promise<Ong[]> {

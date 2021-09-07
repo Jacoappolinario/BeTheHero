@@ -1,10 +1,10 @@
 import { inject, injectable } from 'tsyringe';
 
-import { Ong } from '../../entities/Ong';
+import { Incident } from '../../../incidents/entities/Incident';
 import { IOngsRepository } from '../../repositories/IOngsRepository';
 
 interface IRequest {
-  ong_id: string;
+  id: string;
 }
 
 @injectable()
@@ -14,10 +14,10 @@ class ProfileOngUseCase {
     private ongsRepository: IOngsRepository,
   ) {}
 
-  async execute({ ong_id }: IRequest): Promise<Ong> {
-    const ongProfile = this.ongsRepository.findByOngInformations(ong_id);
+  async execute({ id }: IRequest): Promise<Incident[]> {
+    const incident = await this.ongsRepository.findByIncidents(id);
 
-    return ongProfile;
+    return incident;
   }
 }
 

@@ -9,7 +9,7 @@ class ProfileOngController {
 
     const profileOngUseCase = container.resolve(ProfileOngUseCase);
 
-    const ongProfile = await profileOngUseCase.execute({ ong_id: id });
+    const ongProfile = await profileOngUseCase.execute({ id });
 
     return response.json(ongProfile);
   }

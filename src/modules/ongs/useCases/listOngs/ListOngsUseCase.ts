@@ -11,9 +11,9 @@ class ListOngsUseCase {
   ) {}
 
   async execute(): Promise<Ong[]> {
-    const ongs = this.ongsRepository.list();
+    const all = this.ongsRepository.list();
 
-    return ongs;
+    return all;
   }
 }
 
