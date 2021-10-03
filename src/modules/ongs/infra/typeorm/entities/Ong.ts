@@ -1,4 +1,3 @@
-import { Incident } from '@modules/incidents/infra/typeorm/entities/Incident';
 import {
   Column,
   CreateDateColumn,
@@ -7,6 +6,8 @@ import {
   PrimaryColumn,
 } from 'typeorm';
 import { v4 as uuidV4 } from 'uuid';
+
+import { Incident } from '../../../../incidents/infra/typeorm/entities/Incident';
 
 @Entity('ongs')
 class Ong {
