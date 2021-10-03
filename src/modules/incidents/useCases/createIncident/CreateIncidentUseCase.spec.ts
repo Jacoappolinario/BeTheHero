@@ -1,7 +1,7 @@
+import { AppError } from '@errors/AppError';
+import { IncidentsRepositoryInMemory } from '@modules/incidents/repositories/in-memory/IncidentsRepositoryInMemory';
 import { v4 as uuidV4 } from 'uuid';
 
-import { AppError } from '../../../../errors/AppError';
-import { IncidentsRepositoryInMemory } from '../../repositories/in-memory/IncidentsRepositoryInMemory';
 import { CreateIncidentUseCase } from './CreateIncidentUseCase';
 
 let createIncidentUseCase: CreateIncidentUseCase;

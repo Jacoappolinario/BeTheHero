@@ -1,8 +1,7 @@
+import { AppError } from '@errors/AppError';
+import { ICreateIncidentDTO } from '@modules/incidents/dtos/ICreateIncidentDTO';
+import { IIncidentsRepository } from '@modules/incidents/repositories/IIncidentsRepository';
 import { inject, injectable } from 'tsyringe';
-
-import { AppError } from '../../../../errors/AppError';
-import { ICreateIncidentDTO } from '../../dtos/ICreateIncidentDTO';
-import { IIncidentsRepository } from '../../repositories/IIncidentsRepository';
 
 @injectable()
 class CreateIncidentUseCase {

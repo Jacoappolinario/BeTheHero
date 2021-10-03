@@ -1,9 +1,8 @@
+import { AppError } from '@errors/AppError';
+import { ICreateOngDTO } from '@modules/ongs/dtos/ICreateOngDTO';
+import { IOngsRepository } from '@modules/ongs/repositories/IOngsRepository';
 import { hash } from 'bcrypt';
 import { inject, injectable } from 'tsyringe';
-
-import { AppError } from '../../../../errors/AppError';
-import { ICreateOngDTO } from '../../dtos/ICreateOngDTO';
-import { IOngsRepository } from '../../repositories/IOngsRepository';
 
 @injectable()
 class CreateOngUseCase {

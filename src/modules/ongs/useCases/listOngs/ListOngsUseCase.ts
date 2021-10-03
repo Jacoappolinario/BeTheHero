@@ -1,7 +1,6 @@
+import { Ong } from '@modules/ongs/entities/Ong';
+import { IOngsRepository } from '@modules/ongs/repositories/IOngsRepository';
 import { inject, injectable } from 'tsyringe';
-
-import { Ong } from '../../entities/Ong';
-import { IOngsRepository } from '../../repositories/IOngsRepository';
 
 @injectable()
 class ListOngsUseCase {

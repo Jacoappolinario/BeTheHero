@@ -1,7 +1,6 @@
+import { AppError } from '@errors/AppError';
+import { IIncidentsRepository } from '@modules/incidents/repositories/IIncidentsRepository';
 import { inject, injectable } from 'tsyringe';
-
-import { AppError } from '../../../../errors/AppError';
-import { IIncidentsRepository } from '../../repositories/IIncidentsRepository';
 
 interface IRequest {
   ong_id: string;

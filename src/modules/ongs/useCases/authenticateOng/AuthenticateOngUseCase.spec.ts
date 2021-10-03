@@ -1,6 +1,7 @@
-import { AppError } from '../../../../errors/AppError';
-import { ICreateOngDTO } from '../../dtos/ICreateOngDTO';
-import { OngsRepositoryInMemory } from '../../repositories/in-memory/OngsRepositoryInMemory';
+import { AppError } from '@errors/AppError';
+import { ICreateOngDTO } from '@modules/ongs/dtos/ICreateOngDTO';
+import { OngsRepositoryInMemory } from '@modules/ongs/repositories/in-memory/OngsRepositoryInMemory';
+
 import { CreateOngUseCase } from '../createOng/CreateOngUseCase';
 import { AuthenticateOngUseCase } from './AuthenticateOngUseCase';
 

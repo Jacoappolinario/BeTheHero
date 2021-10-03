@@ -1,7 +1,6 @@
+import { Incident } from '@modules/incidents/entities/Incident';
+import { IOngsRepository } from '@modules/ongs/repositories/IOngsRepository';
 import { inject, injectable } from 'tsyringe';
-
-import { Incident } from '../../../incidents/entities/Incident';
-import { IOngsRepository } from '../../repositories/IOngsRepository';
 
 interface IRequest {
   id: string;

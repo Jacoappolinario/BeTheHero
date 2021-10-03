@@ -1,7 +1,6 @@
+import { Incident } from '@modules/incidents/entities/Incident';
+import { IIncidentsRepository } from '@modules/incidents/repositories/IIncidentsRepository';
 import { inject, injectable } from 'tsyringe';
-
-import { Incident } from '../../entities/Incident';
-import { IIncidentsRepository } from '../../repositories/IIncidentsRepository';
 
 interface IResquest {
   page: number;
