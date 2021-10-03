@@ -1,6 +1,7 @@
-import { Incident } from '../../incidents/entities/Incident';
+import { Incident } from '@modules/incidents/infra/typeorm/entities/Incident';
+
 import { ICreateOngDTO } from '../dtos/ICreateOngDTO';
-import { Ong } from '../entities/Ong';
+import { Ong } from '../infra/typeorm/entities/Ong';
 
 interface IOngsRepository {
   create(data: ICreateOngDTO): Promise<void>;

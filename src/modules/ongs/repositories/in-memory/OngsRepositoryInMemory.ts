@@ -1,6 +1,7 @@
-import { Incident } from '../../../incidents/entities/Incident';
+import { Incident } from '@modules/incidents/infra/typeorm/entities/Incident';
+import { Ong } from '@modules/ongs/infra/typeorm/entities/Ong';
+
 import { ICreateOngDTO } from '../../dtos/ICreateOngDTO';
-import { Ong } from '../../entities/Ong';
 import { IOngsRepository } from '../IOngsRepository';
 
 class OngsRepositoryInMemory implements IOngsRepository {
