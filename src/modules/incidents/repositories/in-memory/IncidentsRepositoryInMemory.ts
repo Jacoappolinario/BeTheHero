@@ -1,5 +1,6 @@
+import { Incident } from '@modules/incidents/infra/typeorm/entities/Incident';
+
 import { ICreateIncidentDTO } from '../../dtos/ICreateIncidentDTO';
-import { Incident } from '../../entities/Incident';
 import { IIncidentsRepository } from '../IIncidentsRepository';
 
 class IncidentsRepositoryInMemory implements IIncidentsRepository {

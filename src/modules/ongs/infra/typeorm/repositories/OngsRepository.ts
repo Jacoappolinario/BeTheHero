@@ -1,9 +1,9 @@
+import { Incident } from '@modules/incidents/infra/typeorm/entities/Incident';
+import { ICreateOngDTO } from '@modules/ongs/dtos/ICreateOngDTO';
+import { IOngsRepository } from '@modules/ongs/repositories/IOngsRepository';
 import { getRepository, Repository } from 'typeorm';
 
-import { Incident } from '../../../incidents/entities/Incident';
-import { ICreateOngDTO } from '../../dtos/ICreateOngDTO';
-import { Ong } from '../../entities/Ong';
-import { IOngsRepository } from '../IOngsRepository';
+import { Ong } from '../entities/Ong';
 
 class OngsRepository implements IOngsRepository {
   private repository: Repository<Ong>;

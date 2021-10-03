@@ -1,8 +1,8 @@
+import { ICreateIncidentDTO } from '@modules/incidents/dtos/ICreateIncidentDTO';
+import { IIncidentsRepository } from '@modules/incidents/repositories/IIncidentsRepository';
 import { getRepository, Repository } from 'typeorm';
 
-import { ICreateIncidentDTO } from '../../dtos/ICreateIncidentDTO';
-import { Incident } from '../../entities/Incident';
-import { IIncidentsRepository } from '../IIncidentsRepository';
+import { Incident } from '../entities/Incident';
 
 class IncidentsRepository implements IIncidentsRepository {
   private repository: Repository<Incident>;

@@ -1,5 +1,5 @@
 import { ICreateIncidentDTO } from '../dtos/ICreateIncidentDTO';
-import { Incident } from '../entities/Incident';
+import { Incident } from '../infra/typeorm/entities/Incident';
 
 interface IIncidentsRepository {
   create(data: ICreateIncidentDTO): Promise<void>;

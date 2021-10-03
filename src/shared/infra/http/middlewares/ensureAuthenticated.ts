@@ -1,8 +1,8 @@
+import { OngsRepository } from '@modules/ongs/infra/typeorm/repositories/OngsRepository';
 import { NextFunction, Request, Response } from 'express';
 import { verify } from 'jsonwebtoken';
 
-import { AppError } from '../errors/AppError';
-import { OngsRepository } from '../modules/ongs/repositories/implementations/OngsRepository';
+import { AppError } from '@shared/errors/AppError';
 
 interface IPayload {
   sub: string;

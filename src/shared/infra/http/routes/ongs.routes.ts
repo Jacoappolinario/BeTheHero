@@ -1,7 +1,6 @@
+import { CreateOngController } from '@modules/ongs/useCases/createOng/CreateOngController';
+import { ListOngsController } from '@modules/ongs/useCases/listOngs/ListOngsController';
 import { Router } from 'express';
-
-import { CreateOngController } from '../modules/ongs/useCases/createOng/CreateOngController';
-import { ListOngsController } from '../modules/ongs/useCases/listOngs/ListOngsController';
 
 const ongsRoutes = Router();
 

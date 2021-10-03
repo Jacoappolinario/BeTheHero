@@ -1,6 +1,5 @@
+import { AuthenticateOngController } from '@modules/ongs/useCases/authenticateOng/AuthenticateOngController';
 import { Router } from 'express';
-
-import { AuthenticateOngController } from '../modules/ongs/useCases/authenticateOng/AuthenticateOngController';
 
 const authenticateRoutes = Router();
 

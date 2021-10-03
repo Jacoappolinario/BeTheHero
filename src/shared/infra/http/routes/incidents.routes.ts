@@ -1,9 +1,9 @@
+import { CreateIncidentController } from '@modules/incidents/useCases/createIncident/CreateIncidentController';
+import { DeleteIncidentController } from '@modules/incidents/useCases/deleteIncident/DeleteIncidentController';
+import { ListIncidentsController } from '@modules/incidents/useCases/listIncidents/ListIncidentsController';
 import { Router } from 'express';
 
 import { ensureAuthenticated } from '../middlewares/ensureAuthenticated';
-import { CreateIncidentController } from '../modules/incidents/useCases/createIncident/CreateIncidentController';
-import { DeleteIncidentController } from '../modules/incidents/useCases/deleteIncident/DeleteIncidentController';
-import { ListIncidentsController } from '../modules/incidents/useCases/listIncidents/ListIncidentsController';
 
 const incidentsRoutes = Router();
 

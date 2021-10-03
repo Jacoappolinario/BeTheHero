@@ -1,6 +1,6 @@
+import { IncidentsRepository } from '@modules/incidents/infra/typeorm/repositories/IncidentsRepository';
 import { IIncidentsRepository } from '@modules/incidents/repositories/IIncidentsRepository';
-import { IncidentsRepository } from '@modules/incidents/repositories/implementations/IncidentsRepository';
-import { OngsRepository } from '@modules/ongs/repositories/implementations/OngsRepository';
+import { OngsRepository } from '@modules/ongs/infra/typeorm/repositories/OngsRepository';
 import { IOngsRepository } from '@modules/ongs/repositories/IOngsRepository';
 import { container } from 'tsyringe';
 
